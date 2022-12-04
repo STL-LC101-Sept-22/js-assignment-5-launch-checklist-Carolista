@@ -34,11 +34,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
   let cargoMassValidation = validateInput(cargoMass);
 
   if (pilotValidation === "Empty" || copilotValidation === "Empty" || fuelLevelValidation === "Empty" || cargoMassValidation === "Empty") {
-    alert('\nAll fields are required.\n');
+    window.alert('\nAll fields are required.\n');
   } else if (pilotValidation === "Is a Number" || copilotValidation === "Is a Number") {
-    alert('\nPlease enter valid pilot and copilot names.\n');
+    window.alert('\nPlease enter valid pilot and copilot names.\n');
   } else if (fuelLevelValidation === "Not a Number" || cargoMassValidation === "Not a Number") {
-    alert('\nFuel level and cargo mass must be valid numbers.\n')
+    window.alert('\nFuel level and cargo mass must be valid numbers.\n')
   } else {
 
     // Heading and list items
