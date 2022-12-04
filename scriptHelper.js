@@ -40,9 +40,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
   } else if (fuelLevelValidation === "Not a Number" || cargoMassValidation === "Not a Number") {
     alert('\nFuel level and cargo mass must be valid numbers.\n')
   } else {
-    // Make list visible as long as all input passes validation
-    // faultyItems is really a misnomer
-    list.style.visibility = 'visible';
 
     // Heading and list items
     const launchStatus = document.getElementById('launchStatus');
@@ -53,7 +50,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
 
     // Update pilot and copilot names
     pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
-    copilotStatus.innerHTML = `Copilot ${copilot} is ready for launch`;
+    copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
 
     // Update fuel status depending on range
     if (fuelLevel < 10000) {
@@ -64,16 +61,20 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
 
     // Update cargo status depending on range
     if (cargoMass > 10000) {
-      cargoStatus.innerHTML = 'Cargo mass too high for launch';
+      cargoStatus.innerHTML = 'Cargo mass too heavy for launch';
     } else {
       cargoStatus.innerHTML = 'Cargo mass low enough for launch';
     }
 
     // Change color of heading depending on fuelStatus and cargoStatus
     if (fuelLevel < 10000 || cargoMass > 10000) {
+      launchStatus.innerHTML = 'Shuttle Not Ready for Launch';
       launchStatus.style.color = 'red';
+      list.style.visibility = 'hidden';
     } else {
+      launchStatus.innerHTML = 'Shuttle is Ready for Launch';
       launchStatus.style.color = 'green';
+      list.style.visibility = 'visible';
     }
   }
 }
