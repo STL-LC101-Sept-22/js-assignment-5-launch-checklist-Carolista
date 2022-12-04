@@ -70,12 +70,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     if (fuelLevel < 10000 || cargoMass > 10000) {
       launchStatus.innerHTML = 'Shuttle Not Ready for Launch';
       launchStatus.style.color = 'red';
-      list.style.visibility = 'visible';
     } else {
       launchStatus.innerHTML = 'Shuttle is Ready for Launch';
       launchStatus.style.color = 'green';
-      list.style.visibility = 'hidden';
     }
+
+    // Make list visible
+    list.style.visibility = 'visible';
   }
 }
 
