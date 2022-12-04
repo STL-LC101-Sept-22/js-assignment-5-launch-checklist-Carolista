@@ -73,10 +73,10 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     // Change color of heading depending on fuelStatus and cargoStatus
     if (fuelLevel < 10000 || cargoMass > 10000) {
       launchStatus.innerHTML = 'Shuttle Not Ready for Launch';
-      launchStatus.style.color = 'red';
+      launchStatus.style.color = 'rgb(199, 37, 78)';
     } else {
       launchStatus.innerHTML = 'Shuttle is Ready for Launch';
-      launchStatus.style.color = 'green';
+      launchStatus.style.color = 'rgb(65, 159, 106)';
     }
 
     // Make list visible
